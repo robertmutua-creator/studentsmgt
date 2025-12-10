@@ -1,0 +1,21 @@
+{
+  "name": "robert/studentsmgt",
+  "description": "Student tracking system",
+  "type": "project",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "Studentsmgt\\": "app/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Robert Mutua",
+      "email": "ictkenyar@gmail.com"
+    }
+  ],
+  "minimum-stability": "stable",
+  "require": {
+    "phpoffice/phpspreadsheet": "^5.3"
+  }
+}

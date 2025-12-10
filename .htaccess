@@ -1,0 +1,18 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Deny access to sensitive folders
+    RedirectMatch 403 ^/(src|vendor|config)(/.*)?$
+
+    # Deny access to sensitive files
+    <FilesMatch "\.(env|ini|phar|sh|git|json)$">
+        Require all denied
+    </FilesMatch>
+
+    # Internally rewrite everything else to public/index.php
+    RewriteCond %{REQUEST_URI} !^/public/
+    RewriteRule ^.*$ public/index.php [L]
+
+    # Disable directory listing
+    Options -Indexes
+</IfModule>
